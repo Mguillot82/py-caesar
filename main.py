@@ -19,3 +19,13 @@ def caesar(text:str, offset:int = 1) -> str:
         result += char
     
     return result
+
+def caesar_decrypt(text:str) -> list[list[str, int]]:
+    result = []
+
+    for i in range(1, 27):
+        possibility = caesar(text, i)
+        result.append([possibility, 26 - i])
+        
+    return result
+    
